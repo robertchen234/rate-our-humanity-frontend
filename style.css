@@ -1,0 +1,97 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+body {
+  padding: 20px 80px;
+  background: #eee url(https://subtlepatterns.com/patterns/extra_clean_paper.png);
+}
+#logo {
+  font-family: 'Open Sans', sans-serif;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 150px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: #EDEDED 3px 2px 0;
+  position: relative;
+}
+#logo:after {
+  content:"Rate Our Humanity";
+  position: absolute;
+  left: 8px;
+  top: 32px;
+}
+#logo:after {
+  /*background: url(https://subtlepatterns.com/patterns/crossed_stripes.png) repeat;*/
+  background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, #555 25%, #555 50%, transparent 50%, transparent 75%, #555 75%);
+  background-size: 4px 4px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -5;
+  display: block;
+  text-shadow: none;
+}
+
+#header, #submit-review, #footer {
+  text-align: center;
+}
+
+#input-username {
+  position: relative;
+  display: inline-block;
+  width: 75%;
+}
+
+#submit-review, #delete {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-top: -30px;
+}
+
+#delete {
+  margin-top: -45px;
+  margin-right: 80px;
+}
+
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 20px;
+  border: 0;
+  background: url(heart.png);
+  background-size: contain;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 35px;
+  height: 20px;
+  border: 0;
+  background: url(heart.png);
+  background-size: contain;
+  cursor: pointer;
+}
