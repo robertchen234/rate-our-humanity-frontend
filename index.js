@@ -10,6 +10,7 @@ function getReviews() {
   let ratings = []
 
   fetch("http://localhost:3000/api/v1/reviews")
+  .then(console.log("got data from reviews database"))
   .then(data => data.json())
   .then(reviews => reviews.forEach(review => {
     renderReview(review)
@@ -30,7 +31,7 @@ function renderReview(review) {
   reviewDiv.innerHTML = `
   <h3>Rating: <span class="rating">${rating}</span> ❤️</h3>
   <p class="content">${content}</p>
-  <p class="username"><i>${username}</i></p>
+  <p class="username"><i>- ${username}</i></p>
   `
 }
 
@@ -45,7 +46,17 @@ function getAverageRating(review, ratings) {
   let avg = total / ratings.length
 
   const averageRating = document.querySelector("#average-rating")
-  averageRating.innerText = avg.toFixed(1)
+  const heart = document.querySelector("#heart")
+  
+  if (!avg) {
+    averageRating.innerText = "?"
+  } else if (avg < 5) {
+    averageRating.innerText = avg.toFixed(1)
+    heart.innerText = "💔"
+  } else {
+    averageRating.innerText = avg.toFixed(1)
+    heart.innerText = "❤️"
+  }
 }
 
 
@@ -155,6 +166,10 @@ function postReview(user, rating, content) {
 function deleteReview() {
   const topSection = document.querySelector("#top-section")
   const reviewId = parseInt(topSection.dataset.id)
+  const reviewForm = document.querySelector("#review-form")
+  reviewForm.reset()
+  const deleteButton = document.querySelector("#delete")
+  deleteButton.style.display = "none"
 
   fetch(`http://localhost:3000/api/v1/reviews/${reviewId}`, {
     method: "DELETE"

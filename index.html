@@ -19,7 +19,7 @@
         <h1 id="logo">Rate Our Humanity</h1>
         <br>
         <br>
-        <h1>Average Rating: <span id="average-rating"></span> ❤️</h1>
+        <h1 style="font-size:5em">Average Rating: <span id="average-rating">?</span> / 10 <span  id="heart">❤️</span></h1>
         <br>
         <br>
       </div>
@@ -27,14 +27,17 @@
 
     <div class="container">
       <section id="top-section">
-        <p style="text-align:center">Use the selector to choose your rating for humanity from 1-5</p>
+        <h3 style="text-align:center">If you could rate humanity, what score would you give it?</h1>
+        <br>
+        <br>
         <form id="review-form" class="form-group">
           <div class="slidecontainer">
-            <input id="input-rating" type="range" min="1" max="5" step="0.5" value="3" class="slider">
+            <p id="selector-instruction">Use the selector to choose your rating for humanity from 1-10</p>
+            <input id="input-rating" type="range" min="0" max="10" value="5" class="slider">
             <p style="font-size:1.5em">Rating: <span id="demo"></span> ❤️</p>
           </div>
           <br>
-          <textarea id="input-content" class="form-control" name="input-content" tabindex="2" placeholder="Why?" rows="3"></textarea>
+          <textarea id="input-content" class="form-control" name="input-content" tabindex="2" placeholder="Why?" rows="4"></textarea>
           <br>
           <input id="input-username" class="form-control" type="text" tabindex="3" placeholder="username">
           <br>
